@@ -17,9 +17,13 @@ ListenToMongo was initially written to avoid the deeply nested callbacks that ar
 ## Limitations
 
 - Currently only supports find, insert, update, remove
-- Only additional queries can be chained, however callback functions are supported
+- Only additional queries can be chained, however callback functions are also supported
 - Currently connection event is only fired on first connection, not on reconnects
 - Unit tests still in progress!
+
+## Dependencies
+
+- [node-mongobd-native](https://github.com/christkv/node-mongodb-native/)
 
 ## Examples
 
@@ -42,16 +46,16 @@ ListenToMongo was initially written to avoid the deeply nested callbacks that ar
     
 ### Chained Query (Insert and Find All)
 
-  var DB = new MongoDb('myDatabase', '127.0.0.1', 27017);
-  
-  var collection = 'myCollection';
-  var doc = {a:1};
-  
-  DB.insert(collection, doc).find(collection, function(err, docs) {
+    var DB = new MongoDb('myDatabase', '127.0.0.1', 27017);
     
-    if (err) { console.log(err); }
+    var collection = 'myCollection';
+    var doc = {a:1};
+    
+    DB.insert(collection, doc).find(collection, function(err, docs) {
+    
+      if (err) { console.log(err); }
   
-    docs.forEach(function(doc) {
-      console.log(doc);
+      docs.forEach(function(doc) {
+        console.log(doc);
+      });
     });
-  });
