@@ -162,6 +162,8 @@ var MongoDb = function (database, host, port, options) {
       
       var method = 'find';
       
+      callback = (typeof arguments[arguments.length - 1] === 'function') ? arguments[arguments.length - 1] : null;
+      
       if (callback) {
         attachCallback(callback);
       }
@@ -207,6 +209,8 @@ var MongoDb = function (database, host, port, options) {
     this.insert = function (collection, docs, options, callback) {
       
       var method = 'insert';
+      
+      callback = (typeof arguments[arguments.length - 1] === 'function') ? arguments[arguments.length - 1] : null;
       
       if (callback) {
         attachCallback(callback);
@@ -261,6 +265,8 @@ var MongoDb = function (database, host, port, options) {
       
       var method = 'update';
       var thisCollection = collection;
+      
+      callback = (typeof arguments[arguments.length - 1] === 'function') ? arguments[arguments.length - 1] : null;
       
       if (callback) {
         attachCallback(callback);
@@ -322,6 +328,8 @@ var MongoDb = function (database, host, port, options) {
     this.remove = function (collection, query_params, callback) {
       
       var method = 'remove';
+      
+      callback = (typeof arguments[arguments.length - 1] === 'function') ? arguments[arguments.length - 1] : null;
       
       if (callback) {
         attachCallback(callback);
