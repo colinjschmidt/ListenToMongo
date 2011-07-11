@@ -4,7 +4,7 @@ A node-mongobd-native wrapper with event listeners supporting query chaining and
 
 ## Overview
 
-ListenToMongo was initially written to avoid the deeply nested callbacks that are easy to write when using node-mongodb-native directly.  It is supposed to be a light-weight wrapper, such that each database method takes the same arguments as the underlying node driver.  ListenToMongo extends the native node.js event emitter object for query buffering and chaining.
+ListenToMongo was initially written so that I could avoid writing deeply nested callbacks when using the node-mongodb-native driver directly.  It is supposed to be a light-weight wrapper, such that each database method takes the same arguments as the underlying node driver.  ListenToMongo extends the native node.js event emitter object for query buffering and chaining.  It doesn't support all of the available mongodb methods yet and unit tests still need to be written.  Feedback and pull requests are appreciated.  
 
 ## Benefits
 
@@ -23,7 +23,7 @@ ListenToMongo was initially written to avoid the deeply nested callbacks that ar
 
 ## Dependencies
 
-- [node-mongobd-native](https://github.com/christkv/node-mongodb-native/)
+- [node-mongodb-native](https://github.com/christkv/node-mongodb-native/)
 
 ## Examples
 
